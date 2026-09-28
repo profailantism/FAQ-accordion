@@ -58,18 +58,23 @@ summary::marker {
 	content: url(assets/images/icon-minus.svg);
 }
 
+details[open] summary ~ * {
+  animation: open 1s ease-in;
+}
+
+@keyframes open {
+  0%    {opacity: 0.5;}
+  100%  {opacity: 1;}
+}
+
 h2 {
 	color: hsl(292, 42%, 14%);
 	font-size: 16px;
 	width: 230px;
 	@media (min-width: 900px) {
 		width: 450px;
+		transition: color 1s;
 	}
-}
-
-h2:hover {
-	cursor: pointer;
-	color: hsl(281, 83%, 54%);
 }
 
 p {
@@ -89,5 +94,10 @@ hr {
 	h1 img {
 		width: 33px;
 		height: 33px;
+	}
+
+	h2:hover {
+		cursor: pointer;
+		color: hsl(281, 83%, 54%);
 	}
 }
